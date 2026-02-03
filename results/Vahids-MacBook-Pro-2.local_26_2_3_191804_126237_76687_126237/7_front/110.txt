@@ -1,0 +1,18 @@
+Generation:
+7
+
+Phenotype:
+def strategy(bars, ind_ls, cross, cross_num, widen, shrink, count_positive, count_negative, make_indicator):
+  is_long = cross_num(make_indicator(bars, ind_ls[51], 81, 90, 6).shift(20), -86.86, False)
+  exit_bar = 8
+  results = (1*is_long).fillna(0)
+  return exit_bar, results
+_exit_bar_, _results_ = strategy(bars, ind_ls, cross, cross_num, widen, shrink, count_positive, count_negative, make_indicator)
+
+Genotype:
+[336, 245, 419, 430, 400, 361, 180, 387, 303, 380, 417, 86, 86, 35, 376, 485, 29, 386, 424, 292, 50, 51]
+Tree:
+(<program> def strategy(bars, ind_ls, cross, cross_num, widen, shrink, count_positive, count_negative, make_indicator):{: (<sets> is_long =  (<conditions> (<condition> cross_num( (<indicator2> make_indicator(bars, ind_ls[ (<indicator_idx> 51) ],  (<digit_double> 81) ,  (<digit_double> 90) ,  (<digit_double> 6) ).shift( (<num_shift> 20) )) ,  (<real_number> - (<digit_double> 86) . (<digit_double> 86)) ,  (<is_above> False) ))) {::}exit_bar =  (<digit_positive> 8) {::}results = (1*is_long).fillna(0)) {::}return exit_bar, results:}{::}_exit_bar_, _results_ = strategy(bars, ind_ls, cross, cross_num, widen, shrink, count_positive, count_negative, make_indicator))
+
+Fitness:
+[np.float64(0.008362731646700983), np.float64(93.79666102122263)]

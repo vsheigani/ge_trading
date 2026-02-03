@@ -1,0 +1,18 @@
+Generation:
+5
+
+Phenotype:
+def strategy(bars, ind_ls, cross, cross_num, widen, shrink, count_positive, count_negative, make_indicator):
+  is_long = cross_num(make_indicator(bars, ind_ls[151], 85, 5, 48).shift(11), -12.43, False) ^ (make_indicator(bars, ind_ls[57], 85, 22, 48).shift(25) < -68.88) & cross_num(make_indicator(bars, ind_ls[63], 56, 90, 79).shift(6), -86.20, False)
+  exit_bar = 2
+  results = (1*is_long).fillna(0)
+  return exit_bar, results
+_exit_bar_, _results_ = strategy(bars, ind_ls, cross, cross_num, widen, shrink, count_positive, count_negative, make_indicator)
+
+Genotype:
+[380, 151, 468, 339, 398, 22, 68, 306, 184, 302, 444, 161, 41, 408, 142, 177, 213, 120, 79, 212, 85, 22, 48, 205, 161, 163, 266, 88, 234, 430, 400, 373, 155, 387, 277, 96, 417, 86, 119, 35, 298, 328, 269, 465, 372, 393, 324, 434, 13, 283, 436, 387, 191, 135]
+Tree:
+(<program> def strategy(bars, ind_ls, cross, cross_num, widen, shrink, count_positive, count_negative, make_indicator):{: (<sets> is_long =  (<conditions> (<conditions> (<conditions> (<condition> cross_num( (<indicator1> make_indicator(bars, ind_ls[ (<indicator_idx> 151) ],  (<digit_double> 85) ,  (<digit_double> 5) ,  (<digit_double> 48) ).shift( (<num_shift> 11) )) ,  (<real_number> - (<digit_double> 12) . (<digit_double> 43)) ,  (<is_above> False) )))   (<op> ^)   (<condition> ( (<indicator2> make_indicator(bars, ind_ls[ (<indicator_idx> 57) ],  (<digit_double> 85) ,  (<digit_double> 22) ,  (<digit_double> 48) ).shift( (<num_shift> 25) ))   (<comp_op> <)   (<real_number> - (<digit_double> 68) . (<digit_double> 88)) )))   (<op> &)   (<condition> cross_num( (<indicator2> make_indicator(bars, ind_ls[ (<indicator_idx> 63) ],  (<digit_double> 56) ,  (<digit_double> 90) ,  (<digit_double> 79) ).shift( (<num_shift> 6) )) ,  (<real_number> - (<digit_double> 86) . (<digit_double> 20)) ,  (<is_above> False) ))) {::}exit_bar =  (<digit_positive> 2) {::}results = (1*is_long).fillna(0)) {::}return exit_bar, results:}{::}_exit_bar_, _results_ = strategy(bars, ind_ls, cross, cross_num, widen, shrink, count_positive, count_negative, make_indicator))
+
+Fitness:
+[np.float64(0.0041348753637455715), np.float64(140.81937893592766)]

@@ -1,0 +1,1 @@
+─ python ponyge.py --parameters ../parameters/moo/moo_trading_params.txt

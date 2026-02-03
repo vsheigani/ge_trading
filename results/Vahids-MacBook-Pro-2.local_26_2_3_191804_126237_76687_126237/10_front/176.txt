@@ -1,0 +1,18 @@
+Generation:
+10
+
+Phenotype:
+def strategy(bars, ind_ls, cross, cross_num, widen, shrink, count_positive, count_negative, make_indicator):
+  is_long = widen(make_indicator(bars, ind_ls[66], 24, 13, 14).shift(25), make_indicator(bars, ind_ls[65], 84, 67, 10).shift(14), 23) ^ cross_num(make_indicator(bars, ind_ls[129], 81, 56, 8).shift(19), 12.2, False) ^ shrink(make_indicator(bars, ind_ls[3], 9, 62, 19).shift(11), make_indicator(bars, ind_ls[33], 29, 29, 42).shift(7), 12)
+  exit_bar = 3
+  results = (1*is_long).fillna(0)
+  return exit_bar, results
+_exit_bar_, _results_ = strategy(bars, ind_ls, cross, cross_num, widen, shrink, count_positive, count_negative, make_indicator)
+
+Genotype:
+[383, 202, 474, 492, 407, 90, 23, 376, 24, 112, 14, 295, 442, 375, 183, 166, 406, 404, 58, 79, 462, 241, 439, 477, 353, 305, 109, 328, 309, 299, 321, 299, 58, 413, 3, 108, 161, 217, 161, 202, 33, 425, 227, 438, 337, 147, 353, 281, 469, 71, 350, 269, 223, 488, 492, 323, 3, 310, 466, 332, 334, 38, 225, 372, 375, 94, 335, 302, 39, 201]
+Tree:
+(<program> def strategy(bars, ind_ls, cross, cross_num, widen, shrink, count_positive, count_negative, make_indicator):{: (<sets> is_long =  (<conditions> (<conditions> (<conditions> (<condition> widen( (<indicator1> make_indicator(bars, ind_ls[ (<indicator_idx> 66) ],  (<digit_double> 24) ,  (<digit_double> 13) ,  (<digit_double> 14) ).shift( (<num_shift> 25) )) ,  (<indicator2> make_indicator(bars, ind_ls[ (<indicator_idx> 65) ],  (<digit_double> 84) ,  (<digit_double> 67) ,  (<digit_double> 10) ).shift( (<num_shift> 14) )) ,  (<period> 23) )))   (<op> ^)   (<condition> cross_num( (<indicator1> make_indicator(bars, ind_ls[ (<indicator_idx> 129) ],  (<digit_double> 81) ,  (<digit_double> 56) ,  (<digit_double> 8) ).shift( (<num_shift> 19) )) ,  (<real_number> (<digit_double> 12) . (<digit_double> 2)) ,  (<is_above> False) )))   (<op> ^)   (<condition> shrink( (<indicator1> make_indicator(bars, ind_ls[ (<indicator_idx> 3) ],  (<digit_double> 9) ,  (<digit_double> 62) ,  (<digit_double> 19) ).shift( (<num_shift> 11) )) ,  (<indicator2> make_indicator(bars, ind_ls[ (<indicator_idx> 33) ],  (<digit_double> 29) ,  (<digit_double> 29) ,  (<digit_double> 42) ).shift( (<num_shift> 7) )) ,  (<period> 12) ))) {::}exit_bar =  (<digit_positive> 3) {::}results = (1*is_long).fillna(0)) {::}return exit_bar, results:}{::}_exit_bar_, _results_ = strategy(bars, ind_ls, cross, cross_num, widen, shrink, count_positive, count_negative, make_indicator))
+
+Fitness:
+[np.float64(0.019912818554062017), np.float64(37.875400040379056)]

@@ -1,0 +1,18 @@
+Generation:
+7
+
+Phenotype:
+def strategy(bars, ind_ls, cross, cross_num, widen, shrink, count_positive, count_negative, make_indicator):
+  is_long = shrink(make_indicator(bars, ind_ls[124], 22, 27, 97).shift(8), make_indicator(bars, ind_ls[119], 21, 41, 52).shift(15), 14) ^ cross_num(make_indicator(bars, ind_ls[54], 12, 82, 91).shift(4), -14.65, False) & cross_num(make_indicator(bars, ind_ls[118], 1, 90, 81).shift(11), -14.65, False)
+  exit_bar = 2
+  results = (1*is_long).fillna(0)
+  return exit_bar, results
+_exit_bar_, _results_ = strategy(bars, ind_ls, cross, cross_num, widen, shrink, count_positive, count_negative, make_indicator)
+
+Genotype:
+[380, 151, 468, 174, 491, 289, 22, 279, 418, 126, 394, 188, 309, 274, 219, 239, 349, 105, 289, 497, 418, 47, 209, 210, 280, 190, 424, 1, 410, 65, 447, 372, 242, 434, 273, 199, 486, 279, 221, 1, 410, 65, 323, 298, 73, 52, 239, 236, 269, 295, 206, 70, 472, 262, 470, 418, 83, 437, 84, 270, 233, 395, 439, 337, 52, 441, 218]
+Tree:
+(<program> def strategy(bars, ind_ls, cross, cross_num, widen, shrink, count_positive, count_negative, make_indicator):{: (<sets> is_long =  (<conditions> (<conditions> (<conditions> (<condition> shrink( (<indicator1> make_indicator(bars, ind_ls[ (<indicator_idx> 124) ],  (<digit_double> 22) ,  (<digit_double> 27) ,  (<digit_double> 97) ).shift( (<num_shift> 8) )) ,  (<indicator2> make_indicator(bars, ind_ls[ (<indicator_idx> 119) ],  (<digit_double> 21) ,  (<digit_double> 41) ,  (<digit_double> 52) ).shift( (<num_shift> 15) )) ,  (<period> 14) )))   (<op> ^)   (<condition> cross_num( (<indicator1> make_indicator(bars, ind_ls[ (<indicator_idx> 54) ],  (<digit_double> 12) ,  (<digit_double> 82) ,  (<digit_double> 91) ).shift( (<num_shift> 4) )) ,  (<real_number> - (<digit_double> 14) . (<digit_double> 65)) ,  (<is_above> False) )))   (<op> &)   (<condition> cross_num( (<indicator1> make_indicator(bars, ind_ls[ (<indicator_idx> 118) ],  (<digit_double> 1) ,  (<digit_double> 90) ,  (<digit_double> 81) ).shift( (<num_shift> 11) )) ,  (<real_number> - (<digit_double> 14) . (<digit_double> 65)) ,  (<is_above> False) ))) {::}exit_bar =  (<digit_positive> 2) {::}results = (1*is_long).fillna(0)) {::}return exit_bar, results:}{::}_exit_bar_, _results_ = strategy(bars, ind_ls, cross, cross_num, widen, shrink, count_positive, count_negative, make_indicator))
+
+Fitness:
+[np.float64(0.0031211143975684585), np.float64(149.3248856228264)]

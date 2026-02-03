@@ -1,0 +1,18 @@
+Generation:
+5
+
+Phenotype:
+def strategy(bars, ind_ls, cross, cross_num, widen, shrink, count_positive, count_negative, make_indicator):
+  is_long = widen(make_indicator(bars, ind_ls[103], 1, 82, 34).shift(3), make_indicator(bars, ind_ls[25], 45, 98, 26).shift(1), 22) ^ shrink(make_indicator(bars, ind_ls[26], 8, 15, 49).shift(25), make_indicator(bars, ind_ls[77], 86, 50, 67).shift(24), 14)
+  exit_bar = 7
+  results = (1*is_long).fillna(0)
+  return exit_bar, results
+_exit_bar_, _results_ = strategy(bars, ind_ls, cross, cross_num, widen, shrink, count_positive, count_negative, make_indicator)
+
+Genotype:
+[377, 31, 79, 387, 320, 413, 199, 478, 232, 303, 433, 180, 243, 395, 422, 91, 277, 77, 102, 60, 181, 404, 312, 247, 235, 267, 232, 284, 347, 463, 174, 129, 69, 305, 476, 427, 275, 187, 104]
+Tree:
+(<program> def strategy(bars, ind_ls, cross, cross_num, widen, shrink, count_positive, count_negative, make_indicator):{: (<sets> is_long =  (<conditions> (<condition> widen( (<indicator1> make_indicator(bars, ind_ls[ (<indicator_idx> 103) ],  (<digit_double> 1) ,  (<digit_double> 82) ,  (<digit_double> 34) ).shift( (<num_shift> 3) )) ,  (<indicator2> make_indicator(bars, ind_ls[ (<indicator_idx> 25) ],  (<digit_double> 45) ,  (<digit_double> 98) ,  (<digit_double> 26) ).shift( (<num_shift> 1) )) ,  (<period> 22) ))   (<op> ^)   (<condition> shrink( (<indicator1> make_indicator(bars, ind_ls[ (<indicator_idx> 26) ],  (<digit_double> 8) ,  (<digit_double> 15) ,  (<digit_double> 49) ).shift( (<num_shift> 25) )) ,  (<indicator2> make_indicator(bars, ind_ls[ (<indicator_idx> 77) ],  (<digit_double> 86) ,  (<digit_double> 50) ,  (<digit_double> 67) ).shift( (<num_shift> 24) )) ,  (<period> 14) ))) {::}exit_bar =  (<digit_positive> 7) {::}results = (1*is_long).fillna(0)) {::}return exit_bar, results:}{::}_exit_bar_, _results_ = strategy(bars, ind_ls, cross, cross_num, widen, shrink, count_positive, count_negative, make_indicator))
+
+Fitness:
+[np.float64(0.01974091107907583), np.float64(29.20298004917594)]
